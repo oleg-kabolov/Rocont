@@ -1,7 +1,4 @@
 /// CSS
-import "../css/style.css";
+import "../assets/styles/main.scss";
 
 //// JS
-import "./modal.js";
-import "./form.js";
-import "./validate.js";

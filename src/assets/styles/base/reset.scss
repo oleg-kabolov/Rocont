@@ -1,0 +1,30 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  max-width: 1600px;
+  margin: 0 auto;
+  overflow-x: hidden;
+  font-family: "Play", sans-serif;
+  background-color: aqua;
+}
+a {
+  text-decoration: none;
+  color: #000;
+}
+img {
+  width: 100%;
+  display: block;
+}
+button {
+  font-family: "Play", sans-serif;
+  font-size: 16px;
+}
+ul {
+  list-style: none;
+}
+svg path {
+  fill: inherit;
+}

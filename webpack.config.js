@@ -2,6 +2,7 @@ const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 const SVGSpritemapPlugin = require("svg-spritemap-webpack-plugin");
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const autoprefixer = require("autoprefixer");
 const cssnano = require("cssnano");
 
@@ -27,7 +28,7 @@ module.exports = {
       {
         test: [/\.scss$/, /\.css$/],
         use: [
-          "style-loader",
+          MiniCssExtractPlugin.loader,
           "css-loader",
           {
             loader: "postcss-loader",
@@ -67,6 +68,9 @@ module.exports = {
       {
         test: /\.(png|svg|jpg|jpeg|webp|gif|woff|woff2|eot|ttf|otf)$/i,
         type: "asset/resource", // Это встроенная поддержка для работы с файлами
+        generator: {
+          filename: "fonts/[name][ext]", // Выходной путь для шрифтов
+        },
       },
     ],
   },
@@ -76,14 +80,22 @@ module.exports = {
       template: "./src/index.html",
       filename: "./index.html",
     }),
-    new SVGSpritemapPlugin("src/images/icons/*.svg", {
+    new MiniCssExtractPlugin({
+      filename: "styles/main.css", // Выходной CSS-файл
+    }),
+    new SVGSpritemapPlugin("src/assets/images/icons/*.svg", {
       output: {
         svgo: {
           plugins: [{ name: "convertColors", params: { currentColor: true } }],
         },
-        filename: "./src/images/icons/sprite.svg",
+        filename: "./src/assets/images/icons/sprite.svg",
       },
     }),
     ,
   ],
+  resolve: {
+    alias: {
+      "@fonts": path.resolve(__dirname, "src/assets/fonts"),
+    },
+  },
 };
