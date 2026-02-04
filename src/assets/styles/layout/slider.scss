@@ -1,0 +1,81 @@
+@use "@styles/base/variables.scss";
+@use "@styles/utils/mixins.scss";
+
+.slider__wrapper {
+  @include mixins.flex;
+}
+
+.slider__title {
+  @include mixins.font-title(40px);
+  color: variables.$secondary-color;
+}
+.slider__head {
+  @include mixins.flex-column;
+
+  @include mixins.slider__head(desktop) {
+    min-height: 450px;
+    max-width: 210px;
+    margin-left: 120px;
+    margin-right: 20px;
+  }
+  @include mixins.slider__head(tablet) {
+  }
+  @include mixins.slider__head(mobile) {
+  }
+}
+.slider__arrow-btn-container {
+  @include mixins.flex-center;
+  @include mixins.slider__arrow-container(desktop) {
+    display: flex;
+  }
+  @include mixins.slider__arrow-container(tablet) {
+    display: flex;
+  }
+  @include mixins.slider__arrow-container(mobile) {
+    display: none;
+  }
+}
+.slider__arrow-btn.arrow-btn--right {
+  rotate: 180deg;
+}
+.slider__arrow-btn.arrow-btn--left {
+  padding-right: 10px;
+}
+.slider__image-container {
+  overflow: hidden;
+  @include mixins.flex-between;
+  @include mixins.slider__image-container(desktop) {
+    max-width: 75vw;
+  }
+}
+.slider__slide {
+  position: relative;
+  @include mixins.slider__slide(desktop) {
+    margin-right: 8px;
+  }
+}
+.slider__slide:last-child {
+  margin-right: 0px;
+}
+.slider__arrow-btn.arrow-btn--left:hover,
+.slider__arrow-btn.arrow-btn--right:hover {
+  background-color: variables.$primary-color;
+}
+.slider__arrow-btn.arrow-btn--left:hover > svg,
+.slider__arrow-btn.arrow-btn--right:hover > svg {
+  color: transparent;
+}
+.slider__overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.slider__overlay-title {
+  color: variables.$tertiary-color;
+  @include mixins.font-title(28px);
+  margin-top: -85px;
+}
+.slider__overlay-text {
+  color: variables.$tertiary-color;
+  @include mixins.font-regular(18px);
+}

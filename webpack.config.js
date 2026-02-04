@@ -96,6 +96,8 @@ module.exports = {
   resolve: {
     alias: {
       "@fonts": path.resolve(__dirname, "src/assets/fonts"),
+      "@styles": path.resolve(__dirname, "src/assets/styles"),
+      "@images": path.resolve(__dirname, "src/assets/images"),
     },
   },
 };

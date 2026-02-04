@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -7,11 +7,13 @@
   </head>
   <body>
     <header class="header">
+      <div class="header__logo">
+        <svg width="130" height="36" class="close-modal-btn-icon">
+          <use href="./assets/images/icons/sprite.svg#main-logo"></use>
+        </svg>
+      </div>
       <nav class="main-nav">
         <ul class="main-nav__list">
-          <li class="main-nav__item">
-            <a href="" class="main-nav__link">О системе</a>
-          </li>
           <li class="main-nav__item">
             <a href="" class="main-nav__link">О системе</a>
           </li>
@@ -22,7 +24,9 @@
             <a href="" class="main-nav__link">Мнения</a>
           </li>
           <li class="main-nav__item">
-            <a href="" class="main-nav__link">Попробовать</a>
+            <a href="" class="main-nav__link main-nav__link--active"
+              >Попробовать</a
+            >
           </li>
           <li class="main-nav__item">
             <a href="" class="main-nav__link">Для своих</a>
@@ -30,5 +34,126 @@
         </ul>
       </nav>
     </header>
+    <main class="main-content">
+      <section class="promo">
+        <div class="promo__content">
+          <h1 class="promo__title">Просто потому что можем</h1>
+          <p class="promo__text">
+            Мы запустили основной цикл в 06:42. Результаты наблюдаются, но не
+            зафиксированы. Рекомендуем сохранять спокойствие до следующего
+            сигнала.
+          </p>
+          <button class="promo__btn">
+            Попробовать
+            <span class="promo__arrow"
+              ><svg width="48" height="20" class="promo__arrow-btn-icon">
+                <use
+                  href="./assets/images/icons/sprite.svg#arrow-btn-icon"
+                ></use></svg
+            ></span>
+          </button>
+        </div>
+        <div class="promo__certifate-number">
+          <span>Сертификат есть. Но это не точно.</span>
+          <span>СГР №AM.01.01 .01.003.R.00 o47 4.06.24</span>
+        </div>
+      </section>
+      <section class="slider">
+        <div class="slider__wrapper">
+          <div class="slider__head">
+            <h2 class="slider__title">Это — не совсем то, что вы думаете</h2>
+            <div class="slider__arrow-btn-container">
+              <span class="slider__arrow-btn arrow-btn--left">
+                <svg width="48" height="20" class="slider-arrow">
+                  <use
+                    href="./assets/images/icons/sprite.svg#slider-arrow-icon"
+                  ></use>
+                </svg>
+              </span>
+              <span class="slider__arrow-btn arrow-btn--right">
+                <svg width="48" height="20" class="slider-arrow">
+                  <use
+                    href="./assets/images/icons/sprite.svg#slider-arrow-icon"
+                  ></use>
+                </svg>
+              </span>
+            </div>
+          </div>
+          <div class="slider__image-container">
+            <div class="slider__slide">
+              <img src="./assets/images/slide-1.png" alt="" />
+              <div class="slider__overlay">
+                <svg width="300" height="450" class="slide-overlap">
+                  <use
+                    href="./assets/images/icons/sprite.svg#slide-hover"
+                  ></use>
+                </svg>
+                <h3 class="slider__overlay-title">Немного упругости</h3>
+                <p class="slider__overlay-text">
+                  Чуть-чуть сияния, и ощущение, что вы о себе позаботились
+                </p>
+              </div>
+            </div>
+            <div class="slider__slide">
+              <img src="./assets/images/slide-2.png" alt="" />
+              <div class="slider__overlay">
+                <svg width="300" height="450" class="slide-overlap">
+                  <use
+                    href="./assets/images/icons/sprite.svg#slide-hover"
+                  ></use>
+                </svg>
+                <h3 class="slider__overlay-title">Немного упругости</h3>
+                <p class="slider__overlay-text">
+                  Чуть-чуть сияния, и ощущение, что вы о себе позаботились
+                </p>
+              </div>
+            </div>
+            <div class="slider__slide">
+              <img src="./assets/images/slide-3.png" alt="" />
+              <div class="slider__overlay">
+                <svg width="300" height="450" class="slide-overlap">
+                  <use
+                    href="./assets/images/icons/sprite.svg#slide-hover"
+                  ></use>
+                </svg>
+                <h3 class="slider__overlay-title">Немного упругости</h3>
+                <p class="slider__overlay-text">
+                  Чуть-чуть сияния, и ощущение, что вы о себе позаботились
+                </p>
+              </div>
+            </div>
+            <div class="slider__slide">
+              <img src="./assets/images/slide-4.png" alt="" />
+              <div class="slider__overlay">
+                <svg width="300" height="450" class="slide-overlap">
+                  <use
+                    href="./assets/images/icons/sprite.svg#slide-hover"
+                  ></use>
+                </svg>
+                <h3 class="slider__overlay-title">Немного упругости</h3>
+                <p class="slider__overlay-text">
+                  Чуть-чуть сияния, и ощущение, что вы о себе позаботились
+                </p>
+              </div>
+            </div>
+            <div class="slider__slide">
+              <img src="./assets/images/slide-5.png" alt="" />
+              <div class="slider__overlay">
+                <svg width="300" height="450" class="slide-overlap">
+                  <use
+                    href="./assets/images/icons/sprite.svg#slide-hover"
+                  ></use>
+                </svg>
+                <h3 class="slider__overlay-title">Немного упругости</h3>
+                <p class="slider__overlay-text">
+                  Чуть-чуть сияния, и ощущение, что вы о себе позаботились
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer class="footer"></footer>
   </body>
 </html>

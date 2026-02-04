@@ -1,3 +1,10 @@
+/* Main styles*/
 @use "base/reset";
-@use "base/variables";
 @use "base/typography";
+
+/* Layout */
+@use "utils/mixins";
+@use "layout/header";
+@use "layout/footer";
+@use "layout/promo-section";
+@use "layout/slider.scss";

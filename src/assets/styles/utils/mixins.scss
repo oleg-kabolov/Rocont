@@ -1,0 +1,189 @@
+@use "@styles/base/variables.scss";
+
+@mixin flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+@mixin flex-column {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+@mixin flex-between {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+@mixin flex {
+  display: flex;
+}
+
+@mixin font-title($size) {
+  font-size: $size;
+  font-weight: 600;
+  font-family: variables.$primary-font;
+}
+@mixin font-regular($size) {
+  font-size: $size;
+  font-weight: 600;
+  font-family: variables.$secondary-font;
+}
+
+@mixin header-margin-breakpoints {
+  @media screen and (max-width: 961px) {
+    margin: 0px 120px;
+  }
+}
+
+@mixin header-margin-breakpoints($breakpoint) {
+  @if $breakpoint == desktop {
+    @media only screen and (min-width: 961px) {
+      @content;
+    }
+  } @else if $breakpoint == tablet {
+    @media only screen and (min-width: 481px) and (max-width: 960px) {
+      @content;
+    }
+  } @else if $breakpoint == phone {
+    @media only screen and (max-width: 480px) {
+      @content;
+    }
+  }
+}
+
+@mixin section-promo($breakpoint) {
+  @if $breakpoint == desktop {
+    @media only screen and (min-width: 961px) {
+      @content;
+    }
+  } @else if $breakpoint == tablet {
+    @media only screen and (min-width: 481px) and (max-width: 960px) {
+      @content;
+    }
+  } @else if $breakpoint == phone {
+    @media only screen and (max-width: 480px) {
+      @content;
+    }
+  }
+}
+
+@mixin promo__title($breakpoint) {
+  @if $breakpoint == desktop {
+    @media only screen and (min-width: 961px) {
+      @content;
+    }
+  } @else if $breakpoint == tablet {
+    @media only screen and (min-width: 481px) and (max-width: 960px) {
+      @content;
+    }
+  } @else if $breakpoint == phone {
+    @media only screen and (max-width: 480px) {
+      @content;
+    }
+  }
+}
+@mixin promo__text($breakpoint) {
+  @if $breakpoint == desktop {
+    @media only screen and (min-width: 961px) {
+      @content;
+    }
+  } @else if $breakpoint == tablet {
+    @media only screen and (min-width: 481px) and (max-width: 960px) {
+      @content;
+    }
+  } @else if $breakpoint == phone {
+    @media only screen and (max-width: 480px) {
+      @content;
+    }
+  }
+}
+@mixin slider__wrapper($breakpoint) {
+  @if $breakpoint == desktop {
+    @media only screen and (min-width: 961px) {
+      @content;
+    }
+  } @else if $breakpoint == tablet {
+    @media only screen and (min-width: 481px) and (max-width: 960px) {
+      @content;
+    }
+  } @else if $breakpoint == phone {
+    @media only screen and (max-width: 480px) {
+      @content;
+    }
+  }
+}
+@mixin slider__head($breakpoint) {
+  @if $breakpoint == desktop {
+    @media only screen and (min-width: 961px) {
+      @content;
+    }
+  } @else if $breakpoint == tablet {
+    @media only screen and (min-width: 481px) and (max-width: 960px) {
+      @content;
+    }
+  } @else if $breakpoint == phone {
+    @media only screen and (max-width: 480px) {
+      @content;
+    }
+  }
+}
+@mixin slider__arrow-container($breakpoint) {
+  @if $breakpoint == desktop {
+    @media only screen and (min-width: 961px) {
+      @content;
+    }
+  } @else if $breakpoint == tablet {
+    @media only screen and (min-width: 481px) and (max-width: 960px) {
+      @content;
+    }
+  } @else if $breakpoint == phone {
+    @media only screen and (max-width: 480px) {
+      @content;
+    }
+  }
+}
+@mixin slider__image-container($breakpoint) {
+  @if $breakpoint == desktop {
+    @media only screen and (min-width: 961px) {
+      @content;
+    }
+  } @else if $breakpoint == tablet {
+    @media only screen and (min-width: 481px) and (max-width: 960px) {
+      @content;
+    }
+  } @else if $breakpoint == phone {
+    @media only screen and (max-width: 480px) {
+      @content;
+    }
+  }
+}
+@mixin slider__slide($breakpoint) {
+  @if $breakpoint == desktop {
+    @media only screen and (min-width: 961px) {
+      @content;
+    }
+  } @else if $breakpoint == tablet {
+    @media only screen and (min-width: 481px) and (max-width: 960px) {
+      @content;
+    }
+  } @else if $breakpoint == phone {
+    @media only screen and (max-width: 480px) {
+      @content;
+    }
+  }
+}
+// /* Extra small devices (phones, 600px and down) */
+// @media only screen and (max-width: 600px) {...}
+
+// /* Small devices (portrait tablets and large phones, 600px and up) */
+// @media only screen and (min-width: 600px) {...}
+
+// /* Medium devices (landscape tablets, 768px and up) */
+// @media only screen and (min-width: 768px) {...}
+
+// /* Large devices (laptops/desktops, 992px and up) */
+// @media only screen and (min-width: 992px) {...}
+
+// /* Extra large devices (large laptops and desktops, 1200px and up) */
+// @media only screen and (min-width: 1200px) {...}

@@ -1,0 +1,45 @@
+@use "@styles/base/variables.scss";
+@use "@styles/utils/mixins.scss";
+
+.header {
+  background-color: variables.$tertiary-color;
+  padding: 20px 24px;
+  border-radius: 20px;
+  @include mixins.flex-between;
+
+  @include mixins.header-margin-breakpoints(desktop) {
+    margin: 5px 120px;
+  }
+  @include mixins.header-margin-breakpoints(tablet) {
+    margin: 5px 10px;
+  }
+  @include mixins.header-margin-breakpoints(phohe) {
+    margin: 0px;
+  }
+}
+.main-nav__list {
+  @include mixins.flex-between;
+}
+.main-nav__link {
+  @include mixins.font-regular(16px);
+  color: variables.$secondary-color;
+  padding: 5px 15px;
+  border: 1px solid transparent;
+  border-radius: 20px;
+  transition: 0.2s ease-in-out;
+}
+.main-nav__link--active {
+  background-color: variables.$primary-color;
+  color: variables.$tertiary-color;
+  padding: 5px 18px;
+}
+
+.main-nav__link:hover {
+  background-color: variables.$primary-color;
+  color: variables.$tertiary-color;
+}
+.main-nav__link--active:hover {
+  background-color: transparent;
+  border: 1px solid variables.$primary-color;
+  color: variables.$secondary-color;
+}

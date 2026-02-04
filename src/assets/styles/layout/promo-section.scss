@@ -1,0 +1,87 @@
+@use "@styles/base/variables.scss";
+@use "@styles/utils/mixins.scss";
+.promo {
+  border-radius: 20px;
+  @include mixins.section-promo(desktop) {
+    min-height: 461px;
+    margin: 10px 120px;
+    padding: 64px 64px;
+    display: flex;
+    background-image: url("@images/first-screen.webp");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+  }
+  @include mixins.section-promo(tablet) {
+    background-image: url("@images/first-screen.webp");
+  }
+  @include mixins.section-promo(phohe) {
+    background-image: none;
+    background-color: variables.$tertiary-color;
+  }
+}
+
+.promo__title {
+  color: variables.$tertiary-color;
+  letter-spacing: 4px;
+  @include mixins.font-title(64px);
+  @include mixins.section-promo(desktop) {
+    width: 60%;
+    line-height: 65px;
+    margin-bottom: 32px;
+  }
+  @include mixins.promo__title(tablet) {
+    @include mixins.font-regular(32px);
+  }
+}
+.promo__text {
+  color: variables.$tertiary-color;
+  @include mixins.font-regular(21px);
+  @include mixins.section-promo(desktop) {
+    width: 50%;
+    word-break: break-word;
+    word-spacing: -1px;
+    line-height: 34px;
+    margin-bottom: 32px;
+  }
+  @include mixins.promo__title(tablet) {
+    @include mixins.font-regular(18px);
+  }
+}
+.promo__btn {
+  border-radius: 20px;
+  padding: 10px 40px;
+  background-color: variables.$primary-color;
+  color: variables.$tertiary-color;
+  display: inline-flex;
+  gap: 20px;
+  align-items: center;
+  @include mixins.font-title(18px);
+}
+.promo__certifate-number {
+  @include mixins.section-promo(desktop) {
+    align-content: flex-end;
+    padding-bottom: 5px;
+    min-width: 295px;
+  }
+  @include mixins.section-promo(tablet) {
+  }
+  @include mixins.section-promo(phohe) {
+  }
+}
+.promo__certifate-number span {
+  color: variables.$tertiary-color;
+  @include mixins.font-regular(16px);
+  @include mixins.section-promo(desktop) {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  @include mixins.section-promo(tablet) {
+  }
+  @include mixins.section-promo(phohe) {
+  }
+}
+.promo__certifate-number span:first-child() {
+  margin-bottom: 20px;
+}
