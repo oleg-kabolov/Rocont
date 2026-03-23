@@ -8,3 +8,35 @@
 @use "layout/footer";
 @use "layout/promo-section";
 @use "layout/slider.scss";
+@use "layout/callback-form.scss";
+@use "layout/burger.scss";
+
+body {
+  background-image: url("@images/background-main.webp");
+}
+main {
+  max-width: 99vw;
+  margin: 0 auto;
+  @include mixins.main(desktop-small) {
+    max-width: 95vw;
+  }
+  @include mixins.main(desktop-large) {
+    max-width: 88vw;
+  }
+  @include mixins.main(mobile) {
+  }
+}
+header {
+  max-width: 78vw;
+  margin: 0 auto;
+  @include mixins.header(desktop-small) {
+  }
+  @include mixins.header(desktop-large) {
+  }
+  @include mixins.header(mobile) {
+  }
+}
+.remove-scrolling {
+  height: 100%;
+  overflow: hidden;
+}

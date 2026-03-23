@@ -18,6 +18,9 @@
 @mixin flex {
   display: flex;
 }
+@mixin flex-wrap {
+  flex-wrap: wrap;
+}
 
 @mixin font-title($size) {
   font-size: $size;
@@ -30,149 +33,150 @@
   font-family: variables.$secondary-font;
 }
 
-@mixin header-margin-breakpoints {
-  @media screen and (max-width: 961px) {
-    margin: 0px 120px;
+@mixin header($breakpoint) {
+  @if $breakpoint == desktop-small {
+    @media only screen and (min-width: 960px) and (max-width: 1200px) {
+      @content;
+    }
+  } @else if $breakpoint == desktop-middle {
+    @media only screen and (min-width: 1200px) and (max-width: 1600px) {
+      @content;
+    }
+  } @else if $breakpoint == desktop-large {
+    @media only screen and (min-width: 1600px) and (max-width: 4000px) {
+      @content;
+    }
+  } @else if $breakpoint == mobile {
+    @media only screen and (min-width: 300px) and (max-width: 959px) {
+      @content;
+    }
   }
 }
-
-@mixin header-margin-breakpoints($breakpoint) {
-  @if $breakpoint == desktop {
-    @media only screen and (min-width: 961px) {
-      @content;
-    }
-  } @else if $breakpoint == tablet {
-    @media only screen and (min-width: 481px) and (max-width: 960px) {
-      @content;
-    }
-  } @else if $breakpoint == phone {
-    @media only screen and (max-width: 480px) {
+@mixin burgerMenu($breakpoint) {
+  @if $breakpoint == mobile {
+    @media only screen and (min-width: 300px) and (max-width: 959px) {
       @content;
     }
   }
-}
-
-@mixin section-promo($breakpoint) {
   @if $breakpoint == desktop {
-    @media only screen and (min-width: 961px) {
-      @content;
-    }
-  } @else if $breakpoint == tablet {
-    @media only screen and (min-width: 481px) and (max-width: 960px) {
-      @content;
-    }
-  } @else if $breakpoint == phone {
-    @media only screen and (max-width: 480px) {
+    @media only screen and (min-width: 960px) and (max-width: 4000px) {
       @content;
     }
   }
 }
 
-@mixin promo__title($breakpoint) {
-  @if $breakpoint == desktop {
-    @media only screen and (min-width: 961px) {
+@mixin main($breakpoint) {
+  @if $breakpoint == desktop-small {
+    @media only screen and (min-width: 960px) and (max-width: 1200px) {
       @content;
     }
-  } @else if $breakpoint == tablet {
-    @media only screen and (min-width: 481px) and (max-width: 960px) {
-      @content;
-    }
-  } @else if $breakpoint == phone {
-    @media only screen and (max-width: 480px) {
+  } @else if $breakpoint == desktop-middle {
+    @media only screen and (min-width: 1200px) and (max-width: 1600px) {
       @content;
     }
   }
 }
-@mixin promo__text($breakpoint) {
-  @if $breakpoint == desktop {
-    @media only screen and (min-width: 961px) {
+
+@mixin sliderWrapper($breakpoint) {
+  @if $breakpoint == desktop-small {
+    @media only screen and (min-width: 960px) and (max-width: 1200px) {
       @content;
     }
-  } @else if $breakpoint == tablet {
-    @media only screen and (min-width: 481px) and (max-width: 960px) {
+  } @else if $breakpoint == desktop-middle {
+    @media only screen and (min-width: 1200px) and (max-width: 1600px) {
       @content;
     }
-  } @else if $breakpoint == phone {
-    @media only screen and (max-width: 480px) {
+  } @else if $breakpoint == desktop-large {
+    @media only screen and (min-width: 1600px) and (max-width: 4000px) {
       @content;
     }
-  }
-}
-@mixin slider__wrapper($breakpoint) {
-  @if $breakpoint == desktop {
-    @media only screen and (min-width: 961px) {
+  } @else if $breakpoint == mobile-large {
+    @media only screen and (min-width: 640px) and (max-width: 959px) {
       @content;
     }
-  } @else if $breakpoint == tablet {
-    @media only screen and (min-width: 481px) and (max-width: 960px) {
+  } @else if $breakpoint == mobile-middle {
+    @media only screen and (min-width: 480px) and (max-width: 639px) {
       @content;
     }
-  } @else if $breakpoint == phone {
-    @media only screen and (max-width: 480px) {
-      @content;
-    }
-  }
-}
-@mixin slider__head($breakpoint) {
-  @if $breakpoint == desktop {
-    @media only screen and (min-width: 961px) {
-      @content;
-    }
-  } @else if $breakpoint == tablet {
-    @media only screen and (min-width: 481px) and (max-width: 960px) {
-      @content;
-    }
-  } @else if $breakpoint == phone {
-    @media only screen and (max-width: 480px) {
+  } @else if $breakpoint == mobile-small {
+    @media only screen and (min-width: 320px) and (max-width: 479px) {
       @content;
     }
   }
 }
-@mixin slider__arrow-container($breakpoint) {
-  @if $breakpoint == desktop {
-    @media only screen and (min-width: 961px) {
+
+@mixin sectionPromo($breakpoint) {
+  @if $breakpoint == desktop-small {
+    @media only screen and (min-width: 960px) and (max-width: 1200px) {
       @content;
     }
-  } @else if $breakpoint == tablet {
-    @media only screen and (min-width: 481px) and (max-width: 960px) {
+  } @else if $breakpoint == desktop-middle {
+    @media only screen and (min-width: 1200px) and (max-width: 1600px) {
       @content;
     }
-  } @else if $breakpoint == phone {
-    @media only screen and (max-width: 480px) {
+  } @else if $breakpoint == desktop-large {
+    @media only screen and (min-width: 1600px) and (max-width: 4000px) {
       @content;
     }
-  }
-}
-@mixin slider__image-container($breakpoint) {
-  @if $breakpoint == desktop {
-    @media only screen and (min-width: 961px) {
+  } @else if $breakpoint == mobile-large {
+    @media only screen and (min-width: 640px) and (max-width: 959px) {
       @content;
     }
-  } @else if $breakpoint == tablet {
-    @media only screen and (min-width: 481px) and (max-width: 960px) {
+  } @else if $breakpoint == mobile-middle {
+    @media only screen and (min-width: 480px) and (max-width: 639px) {
       @content;
     }
-  } @else if $breakpoint == phone {
-    @media only screen and (max-width: 480px) {
-      @content;
-    }
-  }
-}
-@mixin slider__slide($breakpoint) {
-  @if $breakpoint == desktop {
-    @media only screen and (min-width: 961px) {
-      @content;
-    }
-  } @else if $breakpoint == tablet {
-    @media only screen and (min-width: 481px) and (max-width: 960px) {
-      @content;
-    }
-  } @else if $breakpoint == phone {
-    @media only screen and (max-width: 480px) {
+  } @else if $breakpoint == mobile-small {
+    @media only screen and (min-width: 320px) and (max-width: 479px) {
       @content;
     }
   }
 }
+
+@mixin callbackForm($breakpoint) {
+  @if $breakpoint == desktop-small {
+    @media only screen and (min-width: 960px) and (max-width: 1200px) {
+      @content;
+    }
+  } @else if $breakpoint == desktop-middle {
+    @media only screen and (min-width: 1200px) and (max-width: 1600px) {
+      @content;
+    }
+  } @else if $breakpoint == desktop-large {
+    @media only screen and (min-width: 1600px) and (max-width: 4000px) {
+      @content;
+    }
+  }
+}
+
+@mixin mainFooter($breakpoint) {
+  @if $breakpoint == desktop-small {
+    @media only screen and (min-width: 960px) and (max-width: 1200px) {
+      @content;
+    }
+  } @else if $breakpoint == desktop-middle {
+    @media only screen and (min-width: 1200px) and (max-width: 1600px) {
+      @content;
+    }
+  } @else if $breakpoint == desktop-large {
+    @media only screen and (min-width: 1600px) and (max-width: 4000px) {
+      @content;
+    }
+  } @else if $breakpoint == mobile-large {
+    @media only screen and (min-width: 640px) and (max-width: 959px) {
+      @content;
+    }
+  } @else if $breakpoint == mobile-middle {
+    @media only screen and (min-width: 480px) and (max-width: 639px) {
+      @content;
+    }
+  } @else if $breakpoint == mobile-small {
+    @media only screen and (min-width: 320px) and (max-width: 479px) {
+      @content;
+    }
+  }
+}
+
 // /* Extra small devices (phones, 600px and down) */
 // @media only screen and (max-width: 600px) {...}
 

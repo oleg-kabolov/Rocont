@@ -1,0 +1,73 @@
+@use "@styles/base/variables.scss";
+@use "@styles/utils/mixins.scss";
+
+.burger-menu {
+  @include mixins.burgerMenu(mobile) {
+    opacity: 1;
+    visibility: visible;
+  }
+  @include mixins.burgerMenu(desktop) {
+    opacity: 0;
+    visibility: hidden;
+  }
+}
+.header > .main-nav {
+  @include mixins.burgerMenu(mobile) {
+    display: none;
+  }
+}
+
+.burger-menu > nav,
+.burger-menu__burger-menu-close-btn {
+  display: none;
+}
+.burger-menu__burger-menu-close-btn {
+  @include mixins.burgerMenu(mobile) {
+    position: absolute;
+    z-index: 40;
+  }
+}
+
+.burger-menu > nav {
+  @include mixins.burgerMenu(mobile) {
+    transition:
+      visibility 0s,
+      opacity 0.5s linear;
+    position: absolute;
+    top: 0;
+    left: -3vw;
+    z-index: 10;
+    width: 102vw;
+    height: 110vh;
+    background-color: #55545c;
+  }
+}
+.burger-menu > nav > .main-nav__list {
+  @include mixins.burgerMenu(mobile) {
+    flex-direction: column;
+    width: 50vw;
+    height: 50vh;
+    margin: 0 auto;
+    margin-top: 100px;
+  }
+}
+.burger-menu > nav > .main-nav__list > li > a {
+  @include mixins.burgerMenu(mobile) {
+    color: variables.$tertiary-color;
+  }
+}
+.burger-menu__burger-btn {
+  @include mixins.flex;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 25px;
+  background-color: variables.$primary-color;
+  width: 36px;
+  height: 36px;
+}
+.burger-menu__burger-btn svg {
+  margin-bottom: 3px;
+}
+.burger-menu__burger-btn svg:nth-child(1) {
+  margin-top: 12px;
+}

@@ -1,0 +1,440 @@
+@use "@styles/base/variables.scss";
+@use "@styles/utils/mixins.scss";
+
+.main-footer {
+  width: 78vw;
+  margin: 0 auto;
+  @include mixins.mainFooter(desktop-small) {
+    width: 95vw;
+  }
+  @include mixins.mainFooter(desktop-middle) {
+    width: 95vw;
+    margin-bottom: 20px;
+  }
+  @include mixins.mainFooter(desktop-large) {
+    width: 68vw;
+    margin-bottom: 20px;
+  }
+  @include mixins.mainFooter(mobile-large) {
+    width: 95vw;
+  }
+  @include mixins.mainFooter(mobile-middle) {
+    width: 95vw;
+  }
+  @include mixins.mainFooter(mobile-small) {
+    width: 95vw;
+  }
+}
+
+.main-footer__wrapper {
+  @include mixins.flex-between;
+  margin-bottom: 35px;
+  @include mixins.mainFooter(desktop-small) {
+    width: 95vw;
+    margin-bottom: 20px;
+  }
+  @include mixins.mainFooter(mobile-large) {
+    flex-direction: column;
+    margin-bottom: 80px;
+  }
+  @include mixins.mainFooter(mobile-middle) {
+    flex-direction: column;
+    margin-bottom: 80px;
+  }
+  @include mixins.mainFooter(mobile-small) {
+    flex-direction: column;
+    margin-bottom: 80px;
+  }
+}
+.main-footer__contacts {
+  background-color: variables.$tertiary-color;
+  border-radius: 35px;
+  min-height: 435px;
+  padding-top: 64px;
+  padding-left: 64px;
+  padding-right: 64px;
+  margin-right: 10px;
+  width: 100%;
+  @include mixins.mainFooter(desktop-small) {
+    padding-right: 10px;
+    padding-left: 50px;
+    width: 50vw;
+  }
+  @include mixins.mainFooter(desktop-middle) {
+    padding-left: 50px;
+    padding-right: 0px;
+    width: 48vw;
+  }
+  @include mixins.mainFooter(desktop-large) {
+    width: 58vw;
+  }
+  @include mixins.mainFooter(mobile-large) {
+    padding: 25px;
+    margin-right: 0px;
+    margin-bottom: 12px;
+    min-height: 350px;
+  }
+  @include mixins.mainFooter(mobile-middle) {
+    padding: 25px;
+    margin-right: 0px;
+    margin-bottom: 12px;
+    min-height: 350px;
+  }
+  @include mixins.mainFooter(mobile-small) {
+    padding: 25px;
+    padding-right: 0px;
+    margin-right: 0px;
+    margin-bottom: 12px;
+    min-height: 350px;
+  }
+}
+.main-footer__contacts-head {
+  @include mixins.font-title(40px);
+  color: variables.$secondary-color;
+  padding-bottom: 25px;
+  @include mixins.mainFooter(desktop-small) {
+    font-size: 35px;
+  }
+  @include mixins.mainFooter(mobile-large) {
+    font-size: 35px;
+  }
+  @include mixins.mainFooter(mobile-middle) {
+    font-size: 35px;
+  }
+  @include mixins.mainFooter(mobile-small) {
+    font-size: 35px;
+  }
+}
+.main-footer__contacts-list {
+  @include mixins.flex-column;
+  padding-left: 32px;
+}
+.main-footer__contacts-item {
+  @include mixins.font-regular(22px);
+  font-weight: 400;
+  margin-bottom: 20px;
+  position: relative;
+  color: variables.$secondary-color;
+  @include mixins.mainFooter(desktop-small) {
+    font-size: 18px;
+  }
+  @include mixins.mainFooter(mobile-large) {
+    font-size: 18px;
+  }
+  @include mixins.mainFooter(mobile-middle) {
+    font-size: 15px;
+  }
+  @include mixins.mainFooter(mobile-small) {
+    font-size: 18px;
+  }
+}
+.main-footer__contacts-item:nth-child(n + 1)::before {
+  position: absolute;
+  width: 24px;
+  height: 24px;
+  top: 2px;
+  left: -35px;
+  background-repeat: no-repeat;
+  @include mixins.mainFooter(mobile-large) {
+    top: -1px;
+  }
+  @include mixins.mainFooter(mobile-middle) {
+    top: -3px;
+  }
+  @include mixins.mainFooter(mobile-small) {
+    top: -1px;
+  }
+}
+.main-footer__contacts-item:nth-child(1) {
+  width: 69%;
+}
+.main-footer__contacts-item:nth-child(1)::before {
+  content: "";
+  background-image: url('data:image/svg+xml,<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><rect width="24" height="24" rx="12" fill="#1F8B48"/><path fill-rule="evenodd" clip-rule="evenodd" d="M12 11.1662C11.3108 11.1662 10.75 10.6054 10.75 9.91621C10.75 9.22704 11.3108 8.66621 12 8.66621C12.6891 8.66621 13.25 9.22704 13.25 9.91621C13.25 10.6054 12.6891 11.1662 12 11.1662ZM12 6.99954C10.3916 6.99954 9.08331 8.30788 9.08331 9.91621C9.08331 11.5245 10.3916 12.8329 12 12.8329C13.6083 12.8329 14.9166 11.5245 14.9166 9.91621C14.9166 8.30788 13.6083 6.99954 12 6.99954ZM12 18.3716C10.6041 17.0516 6.99998 13.3458 6.99998 10.2683C6.99998 7.54746 9.24248 5.33329 12 5.33329C14.7575 5.33329 17 7.54746 17 10.2683C17 13.3458 13.3958 17.0516 12 18.3716ZM12 3.66663C8.32415 3.66663 5.33331 6.62746 5.33331 10.2683C5.33331 14.8308 11.2075 19.9175 11.4575 20.1316C11.6141 20.2658 11.8066 20.3333 12 20.3333C12.1933 20.3333 12.3858 20.2658 12.5425 20.1316C12.7925 19.9175 18.6666 14.8308 18.6666 10.2683C18.6666 6.62746 15.6758 3.66663 12 3.66663Z" fill="white"/></svg>');
+}
+.main-footer__contacts-item:nth-child(2)::before {
+  content: "";
+  background-image: url('data:image/svg+xml,<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><rect width="24" height="24" rx="12" fill="#1F8B48"/><path fill-rule="evenodd" clip-rule="evenodd" d="M15.3334 11.1666H12.8334V8.66663C12.8334 8.20579 12.46 7.83329 12 7.83329C11.54 7.83329 11.1667 8.20579 11.1667 8.66663V12C11.1667 12.4608 11.54 12.8333 12 12.8333H15.3334C15.7942 12.8333 16.1667 12.4608 16.1667 12C16.1667 11.5391 15.7942 11.1666 15.3334 11.1666ZM12 18.6666C8.32419 18.6666 5.33335 15.6758 5.33335 12C5.33335 8.32413 8.32419 5.33329 12 5.33329C15.6759 5.33329 18.6667 8.32413 18.6667 12C18.6667 15.6758 15.6759 18.6666 12 18.6666ZM12 3.66663C7.40502 3.66663 3.66669 7.40496 3.66669 12C3.66669 16.595 7.40502 20.3333 12 20.3333C16.595 20.3333 20.3334 16.595 20.3334 12C20.3334 7.40496 16.595 3.66663 12 3.66663Z" fill="white"/></svg>');
+}
+.main-footer__contacts-item:nth-child(4)::before {
+  content: "";
+  background-image: url('data:image/svg+xml,<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><rect width="24" height="24" rx="12" fill="#1F8B48"/><path fill-rule="evenodd" clip-rule="evenodd" d="M17.8334 17H6.16669C5.70752 17 5.33335 16.6267 5.33335 16.1667V8.04171L11.5 12.6667C11.6484 12.7784 11.8242 12.8334 12 12.8334C12.1759 12.8334 12.3517 12.7784 12.5 12.6667L18.6667 8.04171V16.1667C18.6667 16.6267 18.2925 17 17.8334 17ZM17.2775 7.00004L12 10.9584L6.72252 7.00004H17.2775ZM17.8334 5.33337H6.16669C4.78835 5.33337 3.66669 6.45504 3.66669 7.83337V16.1667C3.66669 17.545 4.78835 18.6667 6.16669 18.6667H17.8334C19.2117 18.6667 20.3334 17.545 20.3334 16.1667V7.83337C20.3334 6.45504 19.2117 5.33337 17.8334 5.33337Z" fill="white"/></svg>');
+}
+.main-footer__contacts-item:nth-child(3) {
+  @include mixins.flex;
+  @include mixins.mainFooter(mobile-small) {
+    flex-direction: column;
+  }
+}
+.main-footer__contacts-item:nth-child(3) > a {
+  margin-right: 65px;
+  position: relative;
+  @include mixins.mainFooter(mobile-small) {
+    margin-bottom: 20px;
+  }
+}
+.main-footer__contacts-item:nth-child(3) > a:last-child {
+  margin-bottom: 0;
+}
+.main-footer__contacts-item:nth-child(3) > a::before {
+  content: "";
+  position: absolute;
+  width: 24px;
+  height: 24px;
+  top: 2px;
+  left: -35px;
+  background-image: url('data:image/svg+xml,<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><rect width="24" height="24" rx="12" fill="#1F8B48"/><path fill-rule="evenodd" clip-rule="evenodd" d="M7.50008 5.33329C6.30508 5.33329 5.33341 6.30496 5.33341 7.49996C5.33341 13.6566 10.3426 18.6666 16.5001 18.6666C17.6942 18.6666 18.6667 17.695 18.6667 16.5C18.6667 16.4075 18.6609 16.3166 18.6492 16.2266L14.7992 15.3433C14.7226 15.49 14.6384 15.6491 14.5617 15.7975C14.1817 16.5225 13.9067 17.0491 13.2051 16.7666C10.4501 15.8 8.20091 13.55 7.22175 10.7616C6.92425 10.1075 7.49091 9.81079 8.20925 9.43579C8.35508 9.35913 8.51258 9.27663 8.65675 9.20163L7.77341 5.35079C7.68091 5.33913 7.59091 5.33329 7.50008 5.33329ZM16.5001 20.3333C9.42341 20.3333 3.66675 14.5766 3.66675 7.49996C3.66675 5.38579 5.38591 3.66663 7.50008 3.66663C7.71675 3.66663 7.93091 3.68496 8.13841 3.72079C8.34091 3.75329 8.54425 3.80496 8.74258 3.87329C9.01341 3.96746 9.21758 4.19496 9.28175 4.47496L10.4226 9.44496C10.4859 9.71829 10.4067 10.005 10.2117 10.2083C10.0984 10.3266 10.0959 10.3291 9.06258 10.87C9.89925 12.6816 11.3534 14.1308 13.1284 14.9391C13.6701 13.905 13.6734 13.9016 13.7917 13.7883C13.9951 13.5933 14.2834 13.5175 14.5551 13.5775L19.5259 14.7183C19.8051 14.7825 20.0326 14.9858 20.1259 15.2566C20.1942 15.4533 20.2459 15.6566 20.2801 15.8658C20.3151 16.0716 20.3334 16.285 20.3334 16.5C20.3334 18.6141 18.6134 20.3333 16.5001 20.3333Z" fill="white"/></svg>');
+  @include mixins.mainFooter(mobile-large) {
+    top: -1px;
+  }
+  @include mixins.mainFooter(mobile-middle) {
+    top: -3px;
+  }
+  @include mixins.mainFooter(mobile-small) {
+    top: -3px;
+  }
+}
+.main-footer__contacts-item:nth-child(4) {
+  margin-bottom: 35px;
+}
+.main-footer__contacts-item button {
+  @include mixins.font-title(22px);
+  @include mixins.flex;
+  font-weight: 400;
+  justify-content: space-between;
+  letter-spacing: 0.5;
+  align-items: center;
+  border-radius: 35px;
+  color: variables.$tertiary-color;
+  background-color: variables.$primary-color;
+  padding: 15px 25px;
+  outline: none;
+  border: transparent;
+  margin-left: -35px;
+  @include mixins.mainFooter(desktop-small) {
+    font-size: 18px;
+  }
+  @include mixins.mainFooter(mobile-large) {
+    font-size: 20px;
+  }
+  @include mixins.mainFooter(mobile-middle) {
+    font-size: 16px;
+    padding: 15px 20px;
+  }
+  @include mixins.mainFooter(mobile-small) {
+    font-size: 16px;
+    padding: 15px 12px;
+    width: 100%;
+  }
+}
+.main-footer__contacts-item button:hover {
+  cursor: pointer;
+}
+.main-footer__contacts-item span {
+  margin-right: 10px;
+  align-items: center;
+  margin-left: 10px;
+  margin-bottom: -6px;
+  @include mixins.mainFooter(mobile-small) {
+    margin-right: 0px;
+    margin-left: 0px;
+  }
+}
+
+.main-footer__yamap iframe {
+  width: 38.5vw;
+  height: 435px;
+  border-radius: 35px;
+  @include mixins.mainFooter(desktop-small) {
+    width: 46vw;
+  }
+  @include mixins.mainFooter(desktop-middle) {
+    width: 46vw;
+  }
+  @include mixins.mainFooter(desktop-large) {
+    width: 32vw;
+  }
+  @include mixins.mainFooter(mobile-large) {
+    width: 95vw;
+    height: 350px;
+  }
+  @include mixins.mainFooter(mobile-middle) {
+    width: 95vw;
+    height: 350px;
+  }
+  @include mixins.mainFooter(mobile-small) {
+    width: 95vw;
+    height: 350px;
+  }
+}
+
+.main-footer__below-wrapper {
+  @include mixins.flex-between;
+  @include mixins.mainFooter(desktop-small) {
+    margin-bottom: 30px;
+  }
+  @include mixins.mainFooter(mobile-large) {
+    flex-direction: column;
+    align-items: baseline;
+  }
+  @include mixins.mainFooter(mobile-middle) {
+    flex-direction: column;
+    align-items: baseline;
+  }
+  @include mixins.mainFooter(mobile-small) {
+    flex-direction: column;
+    align-items: baseline;
+  }
+}
+
+.main-footer__about {
+  max-width: 30vw;
+  @include mixins.mainFooter(mobile-large) {
+    max-width: 100vw;
+    position: relative;
+  }
+  @include mixins.mainFooter(mobile-middle) {
+    max-width: 100vw;
+    position: relative;
+  }
+  @include mixins.mainFooter(mobile-small) {
+    max-width: 100vw;
+    position: relative;
+  }
+}
+.main-footer__about::before {
+  @include mixins.mainFooter(mobile-large) {
+    content: "";
+    position: absolute;
+    bottom: 20px;
+    left: 0;
+    border: 1px solid variables.$secondary-color;
+    width: 95vw;
+  }
+  @include mixins.mainFooter(mobile-middle) {
+    content: "";
+    position: absolute;
+    bottom: 20px;
+    left: 0;
+    border: 1px solid variables.$secondary-color;
+    width: 95vw;
+  }
+  @include mixins.mainFooter(mobile-small) {
+    content: "";
+    position: absolute;
+    bottom: 20px;
+    left: 0;
+    border: 1px solid variables.$secondary-color;
+    width: 95vw;
+  }
+}
+.main-footer__about-links {
+  @include mixins.flex-wrap;
+  @include mixins.mainFooter(desktop-small) {
+    line-height: 1.7;
+  }
+  @include mixins.mainFooter(desktop-middle) {
+    line-height: 1.8;
+  }
+  @include mixins.mainFooter(mobile-large) {
+    display: flex;
+    flex-wrap: wrap;
+    width: 65vw;
+    padding-bottom: 30px;
+  }
+  @include mixins.mainFooter(mobile-middle) {
+    display: flex;
+    flex-wrap: wrap;
+    width: 65vw;
+    padding-bottom: 30px;
+  }
+  @include mixins.mainFooter(mobile-small) {
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: column;
+    width: 65vw;
+    padding-bottom: 30px;
+  }
+}
+.main-footer__about-links a {
+  @include mixins.font-regular(14px);
+  font-weight: 400;
+  color: variables.$secondary-color;
+  width: 8vw;
+  display: inline-block;
+  @include mixins.mainFooter(desktop-small) {
+    width: 10vw;
+  }
+  @include mixins.mainFooter(mobile-large) {
+    width: 20vw;
+    margin-bottom: 15px;
+  }
+  @include mixins.mainFooter(mobile-middle) {
+    width: 20vw;
+    margin-bottom: 15px;
+  }
+  @include mixins.mainFooter(mobile-small) {
+    width: 20vw;
+    margin-bottom: 24px;
+  }
+}
+
+.main-footer__footer-logo {
+  @include mixins.mainFooter(mobile-large) {
+    position: relative;
+  }
+  @include mixins.mainFooter(mobile-middle) {
+    position: relative;
+  }
+  @include mixins.mainFooter(mobile-small) {
+    position: relative;
+  }
+}
+
+.main-footer__footer-logo > svg {
+  @include mixins.mainFooter(mobile-large) {
+    position: absolute;
+    top: -150px;
+    left: 0;
+  }
+  @include mixins.mainFooter(mobile-middle) {
+    position: absolute;
+    top: -150px;
+    left: 0;
+  }
+  @include mixins.mainFooter(mobile-small) {
+    position: absolute;
+    top: -290px;
+    left: 0;
+  }
+}
+.main-footer__copyright {
+  @include mixins.flex;
+}
+.main-footer__copyright-links {
+  @include mixins.flex-column;
+  padding-right: 35px;
+  @include mixins.mainFooter(mobile-large) {
+    order: 2;
+  }
+  @include mixins.mainFooter(mobile-middle) {
+    order: 2;
+  }
+  @include mixins.mainFooter(mobile-small) {
+    order: 2;
+  }
+}
+.main-footer__copyright a {
+  @include mixins.font-regular(14px);
+  font-weight: 400;
+  color: variables.$secondary-color;
+  @include mixins.mainFooter(mobile-large) {
+    margin-bottom: 20px;
+  }
+  @include mixins.mainFooter(mobile-middle) {
+    margin-bottom: 20px;
+  }
+  @include mixins.mainFooter(mobile-small) {
+    margin-bottom: 24px;
+  }
+}

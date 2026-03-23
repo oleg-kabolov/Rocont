@@ -3,18 +3,32 @@
 
 .header {
   background-color: variables.$tertiary-color;
+  margin-bottom: 15px;
+  margin-top: 25px;
   padding: 20px 24px;
   border-radius: 20px;
   @include mixins.flex-between;
 
-  @include mixins.header-margin-breakpoints(desktop) {
-    margin: 5px 120px;
+  @include mixins.header(desktop-small) {
+    max-width: 95vw;
+    margin-top: 15px;
   }
-  @include mixins.header-margin-breakpoints(tablet) {
-    margin: 5px 10px;
+  @include mixins.header(desktop-middle) {
+    max-width: 95vw;
+    margin-top: 15px;
   }
-  @include mixins.header-margin-breakpoints(phohe) {
-    margin: 0px;
+  @include mixins.header(desktop-large) {
+    max-width: 68vw;
+  }
+  @include mixins.header(mobile) {
+    position: relative;
+    max-width: 95vw;
+    align-items: center;
+    margin-top: 0px;
+    padding-left: 0px;
+    padding-right: 0px;
+    margin: 0 auto;
+    background-color: transparent;
   }
 }
 .main-nav__list {
